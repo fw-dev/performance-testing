@@ -15,14 +15,14 @@ else
 fi
 
 # patch apache/httpd.conf - ensure the process-group="django" isn't on the WSGIScriptAlias line
-httpd_conf = '/usr/local/filewave/apache/conf/httpd.conf'
+httpd_conf='/usr/local/filewave/apache/conf/httpd.conf'
 if [ -f "$httpd_conf" ]; then
-
+    echo "Would patch $httpd_conf"
 fi
 
 # patch the settings.py 
-settings_py = '/usr/local/filewave/django/filewave/settings.py'
+settings_py='/usr/local/filewave/django/filewave/settings.py'
 if [ -f "$settings_py" ]; then
-    grep "" $settings_py
+    echo "Would patch $settings_py"
 fi
 
