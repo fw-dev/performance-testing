@@ -4,8 +4,8 @@ echo "Patching $supervisord_conf"
 
 if [ -f "$supervisord_conf" ]; then
     sed -i "s/apache\/logs\/\*_log\*\"/apache\/logs\/error_log\*\"/g" $supervisord_conf
-    grep error_log\* $supervisord_conf > /dev/null
-    R = $?
+    grep "error_log\*" $supervisord_conf 
+    R=$?
     if [ $R -ne 0 ]; then
         echo "Failed to patch $supervisord_conf; error_log isnt found in the file..."
         exit 1
